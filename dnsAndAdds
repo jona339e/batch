@@ -1,0 +1,16 @@
+@echo off
+
+REM Batch file commands
+
+REM Open PowerShell and execute commands
+powershell -Command "Install-WindowsFeature -Name DNS -IncludeManagementTools"
+
+REM Add a delay of 5 seconds
+timeout /t 5 >nul
+
+REM Open PowerShell and execute commands
+powershell -Command "Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools"
+
+REM More batch file commands
+
+pause
