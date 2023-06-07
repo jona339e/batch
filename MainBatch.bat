@@ -53,6 +53,8 @@ netsh interface ipv4 show config name=%interface%
 
 timeout /t 3 >nul
 
+
+
 setlocal enabledelayedexpansion
 
 REM Get the IPv4 address
@@ -76,6 +78,10 @@ echo Hostname has been set to %hostname%
 
 timeout /t 5 >nul
 
+echo Unjoining from the current domain...
+powershell -Command "$password = ConvertTo-SecureString '%password%' -AsPlainText -Force; Remove-Computer -UnjoinDomainCredential (New-Object System.Management.Automation.PSCredential('%username%', $password)) -PassThru -Restart"
+
+
 
 set /p domainname="Enter the name of the domain you wish to join: "
 set /p username="Enter the username with administrative privileges: "
@@ -90,5 +96,7 @@ if %errorlevel% equ 0 (
 ) else (
     echo There was an error joining the domain.
 )
+
+pause
 
 pause
