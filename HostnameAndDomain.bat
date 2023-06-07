@@ -12,13 +12,15 @@ for /f "tokens=1-4 delims=." %%a in ("%ipv4%") do (
 )
 
 REM Set the hostname
-set "hostname=CORP%last_part%"
+set "hostname=DC-%last_part%"
 
 REM Set the hostname
 wmic computersystem where name="%computername%" call rename name="%hostname%"
 
 echo Hostname has been set to %hostname%
 
+
+timeout /t 5 >nul
 
 
 set /p domainname="Enter the name of the domain you wish to join: "
