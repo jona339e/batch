@@ -1,30 +1,32 @@
 @echo off
-set "rootDrive=C:\"
+setlocal enabledelayedexpansion
 
-rem Create ShareFolder
+set "rootDrive=%SystemDrive%"
+
+REM Create ShareFolder in the root drive
 md "%rootDrive%\ShareFolder"
+echo ShareFolder created in %rootDrive%
 
-rem Set security permissions for Authenticated Users
-icacls "%rootDrive%\ShareFolder" /grant:r "Authenticated Users:(OI)(CI)F"
+set "addFolder=Y"
 
-rem Share ShareFolder with Full Access for Authenticated Users
-net share ShareFolder="%rootDrive%\ShareFolder" /grant:"Authenticated Users",full
+:loop
+if /i "%addFolder%"=="Y" (
+    set /p "folderName=Enter the folder name (or 'N' to exit): "
+    if /i "!folderName!"=="N" (
+        set "addFolder=N"
+    ) else (
+        md "%rootDrive%\ShareFolder\!folderName!"
+        echo Folder "!folderName!" created in ShareFolder
+    )
+    goto loop
+)
 
-rem Create folders inside ShareFolder
-md "%rootDrive%\ShareFolder\IT"
-md "%rootDrive%\ShareFolder\Salg"
-md "%rootDrive%\ShareFolder\Ledelse"
-md "%rootDrive%\ShareFolder\Administration"
-md "%rootDrive%\ShareFolder\Logistik"
-md "%rootDrive%\ShareFolder\Kantine"
-
-echo ShareFolder and subfolders created successfully.
 
 REM Set the folder path
 set "folderPath=C:\ShareFolder"
 
 REM Set the share name
-set "shareName=SharedFolder"
+set "shareName=SharedFolder2"
 
 REM Set the share description
 set "shareDescription=Shared folder for authenticated users"
