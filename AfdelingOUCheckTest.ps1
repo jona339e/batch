@@ -6,7 +6,7 @@ $parentContainer = "Afdelinger"
 
 # Specify the distinguished name (DN) of the root of the domain
 #$rootDN = "DC=asd,DC=corp117,DC=com"
-$rootDN = "DC=corp117,DC=com"
+$rootDN = "DC=corp135,DC=com"
 
 # Specify the search base DN
 $searchBaseDN = "OU=$parentContainer,$rootDN"
@@ -176,10 +176,10 @@ $firstName = "John"
 $lastName = "Johnson"
 $username = "JoJo"
 $password = ConvertTo-SecureString "Passw0rd" -AsPlainText -Force
-$ouPath = "OU=Ledelse,OU=Afdelinger,DC=corp117,DC=com"  # Specify the desired OU path for the user
+$ouPath = "OU=Ledelse,OU=Afdelinger,DC=corp135,DC=com"  # Specify the desired OU path for the user
 
 # Create the user
-New-ADUser -SamAccountName $username -GivenName $firstName -Surname $lastName -UserPrincipalName "$username@corp117.com" -Name "$firstName $lastName" -Enabled $true -PasswordNeverExpires $true -AccountPassword $password -Path $ouPath
+New-ADUser -SamAccountName $username -GivenName $firstName -Surname $lastName -UserPrincipalName "$username@corp135.com" -Name "$firstName $lastName" -Enabled $true -PasswordNeverExpires $true -AccountPassword $password -Path $ouPath
 
 Write-Host "User '$username' created successfully."
 
@@ -212,10 +212,10 @@ $firstName = "Jane"
 $lastName = "Doe"
 $username = "JoDo"
 $password = ConvertTo-SecureString "Passw0rd" -AsPlainText -Force
-$ouPath = "OU=Ledelse,OU=Afdelinger,DC=corp117,DC=com"  # Specify the desired OU path for the user
+$ouPath = "OU=Ledelse,OU=Afdelinger,DC=corp135,DC=com"  # Specify the desired OU path for the user
 
 # Create the user
-New-ADUser -SamAccountName $username -GivenName $firstName -Surname $lastName -UserPrincipalName "$username@corp117.com" -Name "$firstName $lastName" -Enabled $true -PasswordNeverExpires $true -AccountPassword $password -Path $ouPath
+New-ADUser -SamAccountName $username -GivenName $firstName -Surname $lastName -UserPrincipalName "$username@corp135.com" -Name "$firstName $lastName" -Enabled $true -PasswordNeverExpires $true -AccountPassword $password -Path $ouPath
 
 Write-Host "User '$username' created successfully."
 
@@ -234,10 +234,10 @@ $firstName = "Ib"
 $lastName = "Itsen"
 $username = "ibit"
 $password = ConvertTo-SecureString "Passw0rd" -AsPlainText -Force
-$ouPath = "OU=IT,OU=Afdelinger,DC=corp117,DC=com"  # Specify the desired OU path for the user
+$ouPath = "OU=IT,OU=Afdelinger,DC=corp135,DC=com"  # Specify the desired OU path for the user
 
 # Create the user
-New-ADUser -SamAccountName $username -GivenName $firstName -Surname $lastName -UserPrincipalName "$username@corp117.com" -Name "$firstName $lastName" -Enabled $true -PasswordNeverExpires $true -AccountPassword $password -Path $ouPath
+New-ADUser -SamAccountName $username -GivenName $firstName -Surname $lastName -UserPrincipalName "$username@corp135.com" -Name "$firstName $lastName" -Enabled $true -PasswordNeverExpires $true -AccountPassword $password -Path $ouPath
 
 Write-Host "User '$username' created successfully."
 
@@ -267,10 +267,10 @@ $firstName = "Ivar"
 $lastName = "Itson"
 $username = "ivit"
 $password = ConvertTo-SecureString "Passw0rd" -AsPlainText -Force
-$ouPath = "OU=IT,OU=Afdelinger,DC=corp117,DC=com"  # Specify the desired OU path for the user
+$ouPath = "OU=IT,OU=Afdelinger,DC=corp135,DC=com"  # Specify the desired OU path for the user
 
 # Create the user
-New-ADUser -SamAccountName $username -GivenName $firstName -Surname $lastName -UserPrincipalName "$username@corp117.com" -Name "$firstName $lastName" -Enabled $true -PasswordNeverExpires $true -AccountPassword $password -Path $ouPath
+New-ADUser -SamAccountName $username -GivenName $firstName -Surname $lastName -UserPrincipalName "$username@corp135.com" -Name "$firstName $lastName" -Enabled $true -PasswordNeverExpires $true -AccountPassword $password -Path $ouPath
 
 Write-Host "User '$username' created successfully."
 
@@ -285,14 +285,14 @@ Add-ADGroupMember -Identity $groupGlobalName -Members $username
 ###
 
 # Add Søren Sørensen as user and Salg group
-$firstName = "Søren"
-$lastName = "Sørensen"
-$username = "søsø"
+$firstName = "Soeren"
+$lastName = "Soerensen"
+$username = "soso�"
 $password = ConvertTo-SecureString "Passw0rd" -AsPlainText -Force
-$ouPath = "OU=Salg,OU=Afdelinger,DC=corp117,DC=com"  # Specify the desired OU path for the user
+$ouPath = "OU=Salg,OU=Afdelinger,DC=corp135,DC=com"  # Specify the desired OU path for the user
 
 # Create the user
-New-ADUser -SamAccountName $username -GivenName $firstName -Surname $lastName -UserPrincipalName "$username@corp117.com" -Name "$firstName $lastName" -Enabled $true -PasswordNeverExpires $true -AccountPassword $password -Path $ouPath
+New-ADUser -SamAccountName $username -GivenName $firstName -Surname $lastName -UserPrincipalName "$username@corp135.com" -Name "$firstName $lastName" -Enabled $true -PasswordNeverExpires $true -AccountPassword $password -Path $ouPath
 
 Write-Host "User '$username' created successfully."
 
@@ -322,10 +322,10 @@ $firstName = "Steen"
 $lastName = "Steensen"
 $username = "steste"
 $password = ConvertTo-SecureString "Passw0rd" -AsPlainText -Force
-$ouPath = "OU=Salg,OU=Afdelinger,DC=corp117,DC=com"  # Specify the desired OU path for the user
+$ouPath = "OU=Salg,OU=Afdelinger,DC=corp135,DC=com"  # Specify the desired OU path for the user
 
 # Create the user
-New-ADUser -SamAccountName $username -GivenName $firstName -Surname $lastName -UserPrincipalName "$username@corp117.com" -Name "$firstName $lastName" -Enabled $true -PasswordNeverExpires $true -AccountPassword $password -Path $ouPath
+New-ADUser -SamAccountName $username -GivenName $firstName -Surname $lastName -UserPrincipalName "$username@corp135.com" -Name "$firstName $lastName" -Enabled $true -PasswordNeverExpires $true -AccountPassword $password -Path $ouPath
 
 Write-Host "User '$username' created successfully."
 
